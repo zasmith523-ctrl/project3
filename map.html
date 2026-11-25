@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map - Project 3</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="personal.html">Personal</a></li>
+          <li><a href="map.html">Map</a></li>
+          <li><button id="questions-btn" type="button">Questions</button></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="map-container">
+      <h1 class="home-title">Campus &amp; City Map</h1>
+      <p class="map-intro">Click the marker on the map below to view details about Illinois Institute of Technology in Chicago.</p>
+      <div id="map"></div>
+    </main>
+    <script>
+      function initMap() {
+        const iitChicago = { lat: 41.8349, lng: -87.6270 };
+
+        // Feature 1: Custom map color theme
+        const customMapStyles = [
+          {
+            featureType: "water",
+            elementType: "geometry",
+            stylers: [{ color: "#bae6fd" }]
+          },
+          {
+            featureType: "landscape",
+            elementType: "geometry",
+            stylers: [{ color: "#f1f5f9" }]
+          },
+          {
+            featureType: "poi.park",
+            elementType: "geometry",
+            stylers: [{ color: "#bbf7d0" }]
+          }
+        ];
+
+        const map = new google.maps.Map(document.getElementById("map"), {
+          center: iitChicago,
+          zoom: 14,
+          styles: customMapStyles
+        });
+
+        // Feature 2: Custom marker
+        const campusMarker = new google.maps.Marker({
+          position: iitChicago,
+          map: map,
+          title: "Illinois Institute of Technology",
+          animation: google.maps.Animation.DROP
+        });
+
+        // Feature 3: Clickable InfoWindow
+        const infoWindow = new google.maps.InfoWindow({
+          content: "<h2>Illinois Institute of Technology</h2><p>10 W 35th St, Chicago, IL 60616</p>"
+        });
+
+        campusMarker.addListener("click", () => {
+          infoWindow.open(map, campusMarker);
+        });
+
+        // Bonus Feature: Campus radius circle overlay
+        new google.maps.Circle({
+          strokeColor: "#0284c7",
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: "#38bdf8",
+          fillOpacity: 0.15,
+          map: map,
+          center: iitChicago,
+          radius: 650
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM1F-BpX660SBK3-Vw9O9f7AEvTAIH8rI&callback=initMap" async defer></script>
+  </body>
+</html>

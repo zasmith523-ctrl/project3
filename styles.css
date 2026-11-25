@@ -1,0 +1,307 @@
+/* ==========================================================================
+   GLOBAL & NAVIGATION STYLES
+   ========================================================================== */
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+header {
+  background-color: #1e293b;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.05rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #3b82f6;
+}
+
+#questions-btn {
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#questions-btn:hover {
+  background-color: #0369a1;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1e293b;
+  background-color: #f8fafc;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   HOME PAGE STYLES (MOBILE-FIRST BASE)
+   ========================================================================== */
+
+.home-container {
+  max-width: 94vw;
+  margin: 1.25rem auto;
+  padding: 1.25rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+}
+
+.home-title {
+  font-size: 1.75rem;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.home-hero {
+  background-color: #e0f2fe;
+  border-left: 6px solid #0284c7;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.home-card {
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 14px -2px rgba(15, 23, 42, 0.15);
+}
+
+.home-card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #0369a1;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.home-card a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   RESUME PAGE STYLES (FIXED LAYOUT)
+   ========================================================================== */
+
+.resume-container {
+  width: 800px;
+  margin: 30px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.resume-section-header {
+  font-size: 22px;
+  color: #1e3a8a;
+  border-bottom: 2px solid #1e3a8a;
+  padding-bottom: 6px;
+  margin-top: 25px;
+  text-transform: uppercase;
+}
+
+.job-title {
+  font-weight: bold;
+  color: #0f172a;
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.job-meta {
+  font-style: italic;
+  color: #475569;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-badge {
+  background-color: #e2e8f0;
+  color: #1e293b;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   PERSONAL PAGE STYLES
+   ========================================================================== */
+
+.personal-banner {
+  background-image: linear-gradient(135deg, #4f46e5, #7c3aed);
+  background-color: #4f46e5;
+  color: #ffffff;
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.profile-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.hobby-section {
+  max-width: 85%;
+  margin: 0 auto 2rem auto;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 5px solid #7c3aed;
+}
+
+.favorite-quote {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #334155;
+  background-color: #f8fafc;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #7c3aed;
+  margin: 1.5rem 0;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.gallery-item {
+  border: 3px solid #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover {
+  opacity: 0.85;
+}
+
+/* ==========================================================================
+   MAP PAGE STYLES
+   ========================================================================== */
+
+.map-container {
+  max-width: 90vw;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+}
+
+.map-intro {
+  text-align: center;
+  color: #334155;
+  margin-bottom: 1.5rem;
+}
+
+#map {
+  height: 450px;
+  width: 100%;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+/* ==========================================================================
+   HOME PAGE MEDIA QUERIES (TWO MIN-WIDTH RANGES, 3+ STYLE CHANGES EACH)
+   ========================================================================== */
+
+/* Media Query 1: Tablet Screens (768px and up) */
+@media (min-width: 768px) {
+  .home-container {
+    max-width: 88vw;
+    padding: 2rem 4%;
+  }
+
+  .home-title {
+    font-size: 2.25rem;
+  }
+
+  .home-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .home-hero {
+    padding: 1.75rem;
+  }
+}
+
+/* Media Query 2: Desktop Screens (1100px and up) */
+@media (min-width: 1100px) {
+  .home-container {
+    max-width: 1140px;
+    padding: 2.5rem 3rem;
+  }
+
+  .home-title {
+    font-size: 2.6rem;
+  }
+
+  .home-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .home-card {
+    padding: 1.75rem;
+  }
+}
